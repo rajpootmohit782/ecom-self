@@ -45,16 +45,13 @@ const productsArr = [
     }
     
     ]
-const Music_page = () => {
+const Musicpage = () => {
   return (
     <div className={classes.heading}>
-       <div> Music ffiles</div>
-
-        
         <div>
             {productsArr.map((productss) =><div className={classes.products}> 
                 <h2 className={classes.title}>{productss.title}</h2>
-                <img src={productss.imageUrl} alt='music-album-image'/>
+                <img src={productss.imageUrl} alt='music-album-ima'/>
                 <h3> ${productss.price}</h3>
                  </div>)}
         </div>
@@ -62,4 +59,4 @@ const Music_page = () => {
   )
 }
 
-export default Music_page
+export default Musicpage

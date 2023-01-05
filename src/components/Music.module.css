@@ -1,5 +1,6 @@
 .heading{
     display: flex;
+    flex-direction: column;
     align-items: center;
     margin-top: 50px;
 }
@@ -8,6 +9,11 @@
 }
 .products{
     display: flex;
-    flex-direction: row;
+   flex-direction: column;
+    column-gap: normal;
     
+}
+.poster{
+    display: flex;
+    justify-content: space-evenly;
 }
