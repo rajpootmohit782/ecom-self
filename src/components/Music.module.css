@@ -1,0 +1,13 @@
+.heading{
+    display: flex;
+    align-items: center;
+    margin-top: 50px;
+}
+.music{
+    background-color: aqua;
+}
+.products{
+    display: flex;
+    flex-direction: row;
+    
+}

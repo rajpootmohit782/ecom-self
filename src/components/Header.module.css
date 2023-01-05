@@ -1,0 +1,28 @@
+.container{
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+    background-color: black;
+    height: 45px;
+    color: white;
+    align-items: center;
+    
+}
+.divcontainer{
+    width: 100%;
+   display: flex;
+}
+.cart{
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+    border-radius: 50px;
+}
+.poster{
+    display: flex;
+    width: 100px;
+    margin-left: 50%;
+    height: 70px;
+    background-color: brown;
+    justify-content: space-evenly;
+}
