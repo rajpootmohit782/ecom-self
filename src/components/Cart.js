@@ -1,5 +1,6 @@
 import React, { useContext } from 'react'
 import { Button } from 'react-bootstrap'
+import { Link } from 'react-router-dom'
 import { CartContext } from './Context'
 
 const Cart = ({setIscart,isCart}) => {
@@ -22,7 +23,7 @@ const Cart = ({setIscart,isCart}) => {
         <div>price</div>
         
         <div>quantity</div>
-        <button onClick={()=> setIscart(!isCart)}>X</button>
+       <Link to="/"><button onClick={()=> setIscart(!isCart)}>X</button></Link> 
         </div>
         <ul id='list'>
             {cartElements.map((Element) => <li id={Element.key} style={{display: 'flex' , justifyContent: 'space-evenly'}}><div>{Element.title}</div> <div>{Element.price}</div><div>{Element.quantity}</div> <Button  onClick= {()=> removeHandel(Element.key)}>Remove</Button></li>)}
