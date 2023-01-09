@@ -1,9 +1,13 @@
-import React,{} from 'react'
+import React,{ useContext, useState } from 'react'
 import classes from './Header.module.css'
 import { Button } from 'react-bootstrap'
+import { CartContext } from './Context'
 
 const Header = (props) => {
-   
+   const GlobalContext= useContext(CartContext)
+
+   const statelength= GlobalContext.state.length
+   console.log(statelength)
 
   return (
 
@@ -19,7 +23,7 @@ const Header = (props) => {
     </div>
     <div>
         
-    <Button onClick={props.cartHandle} varient='sucess'>Cart</Button>
+    <Button onClick={props.cartHandle} varient='sucess'>Cart{statelength}</Button>
     </div>
   </div>
     

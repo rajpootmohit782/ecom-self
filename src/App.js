@@ -12,7 +12,7 @@ const cart = (props)=>{
 }
   return (
     <div>
-   { isCart && <div> <Cart/></div>}
+   { isCart && <div> <Cart setIscart={setIscart} isCart={isCart}/></div>}
    { !isCart && <div>
       <Header cartHandle={cart}/>
       <Poster/>

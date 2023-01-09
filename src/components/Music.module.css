@@ -8,8 +8,9 @@
     background-color: aqua;
 }
 .products{
-    display: flex;
-   flex-direction: column;
+    display: grid;
+   grid-column: auto;
+   
     column-gap: normal;
     
 }

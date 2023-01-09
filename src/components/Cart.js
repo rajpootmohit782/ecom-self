@@ -1,47 +1,12 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { Button } from 'react-bootstrap'
+import { CartContext } from './Context'
 
-const Cart = (e) => {
-    const cartElements = [
-
-        {
-        key: 1,
-        title: 'Colors',
-        
-        price: 100,
-        
-        imageUrl: 'https://prasadyash2411.github.io/ecom-website/img/Album%201.png',
-        
-        quantity: 2,
-        
-        },
-        
-        {
-          key: 2,
-        title: 'Black and white Colors',
-        
-        price: 50,
-        
-        imageUrl: 'https://prasadyash2411.github.io/ecom-website/img/Album%202.png',
-        
-        quantity: 3,
-        
-        },
-        
-        {
-        key: 3,
-        title: 'Yellow and Black Colors',
-        
-        price: 70,
-        
-        imageUrl: 'https://prasadyash2411.github.io/ecom-website/img/Album%203.png',
-        
-        quantity: 1,
-        
-        }
-        
-        ]
-
+const Cart = ({setIscart,isCart}) => {
+  const GlobalContext = useContext(CartContext)
+  const cartElements = GlobalContext.state
+  console.log(cartElements)
+    
         const removeHandel =(props)=>{
        
          let re =   document.getElementById('list')
@@ -49,6 +14,7 @@ const Cart = (e) => {
          console.log(ren)
           re.removeChild(ren)
         }
+        console.log(isCart)
   return (
     <div>
         <div style={{display: 'flex' , justifyContent: 'space-evenly'}}>
@@ -56,6 +22,7 @@ const Cart = (e) => {
         <div>price</div>
         
         <div>quantity</div>
+        <button onClick={()=> setIscart(!isCart)}>X</button>
         </div>
         <ul id='list'>
             {cartElements.map((Element) => <li id={Element.key} style={{display: 'flex' , justifyContent: 'space-evenly'}}><div>{Element.title}</div> <div>{Element.price}</div><div>{Element.quantity}</div> <Button  onClick= {()=> removeHandel(Element.key)}>Remove</Button></li>)}
