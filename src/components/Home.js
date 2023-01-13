@@ -1,18 +1,17 @@
-import React from 'react'
-import Header from './Header'
-import Musicpage from './Music_page'
-import Poster from './Poster'
+import React from "react";
+import Header from "./Header";
+import Musicpage from "./Music_page";
+import Poster from "./Poster";
 
-const Home = ({cartHandle}) => {
-    console.log(cartHandle)
+const Home = (props) => {
+  console.log(props);
   return (
     <div>
-        <Header cartHandle={cartHandle}/>
-        <Poster/>
-        <Musicpage/>
-        
+      <Header cartHandle={props} />
+      <Poster />
+      <Musicpage />
     </div>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;
