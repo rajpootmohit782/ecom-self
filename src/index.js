@@ -11,12 +11,15 @@ import App from "./App";
 //import "../node_modules/react-bootstrap/dist/react-bootstrap";
 import "../node_modules/bootstrap/dist/css/bootstrap.css";
 import Cart from "./components/Cart";
+import { AuthContextProvider } from "./components/store/auth-context";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-  <BrowserRouter>
-    <Context>
-      <App />
-    </Context>
-  </BrowserRouter>
+  <AuthContextProvider>
+    <BrowserRouter>
+      <Context>
+        <App />
+      </Context>
+    </BrowserRouter>
+  </AuthContextProvider>
 );

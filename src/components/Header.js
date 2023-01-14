@@ -6,12 +6,16 @@ import Poster from "./Poster";
 import Musicpage from "./Music_page";
 import Aboutpage from "./Aboutpage";
 import { Link, NavLink } from "react-router-dom";
+import AuthContext from "./store/auth-context";
 
 const Header = (props) => {
   const GlobalContext = useContext(CartContext);
 
   const statelength = GlobalContext.state.length;
   console.log(statelength);
+
+  const authCtx = useContext(AuthContext);
+  const isLoggedIn = authCtx.isLoggedIn;
   const Cart = <Button varient="sucess">Cart{statelength}</Button>;
   return (
     <div>
@@ -21,24 +25,46 @@ const Header = (props) => {
             <NavLink style={{ textDecoration: "None", color: "white" }} to="/">
               Home
             </NavLink>
-            <NavLink
-              style={{ textDecoration: "None", color: "white" }}
-              to="/products"
-            >
-              Products
-            </NavLink>
-            <NavLink
-              style={{ textDecoration: "None", color: "white" }}
-              to="/about"
-            >
-              Aboutpage
-            </NavLink>
-            <NavLink
-              style={{ textDecoration: "None", color: "white" }}
-              to="/login"
-            >
-              Login
-            </NavLink>
+            {isLoggedIn && (
+              <NavLink
+                style={{ textDecoration: "None", color: "white" }}
+                to="/products"
+              >
+                Products
+              </NavLink>
+            )}
+            {isLoggedIn && (
+              <NavLink
+                style={{ textDecoration: "None", color: "white" }}
+                to="/about"
+              >
+                Aboutpage
+              </NavLink>
+            )}
+            {!isLoggedIn && (
+              <NavLink
+                style={{ textDecoration: "None", color: "white" }}
+                to="/login"
+              >
+                Login
+              </NavLink>
+            )}
+            {isLoggedIn && (
+              <NavLink
+                style={{ textDecoration: "None", color: "white" }}
+                to="/"
+              >
+                Logout
+              </NavLink>
+            )}
+            {isLoggedIn && (
+              <NavLink
+                style={{ textDecoration: "None", color: "white" }}
+                to="/profile"
+              >
+                Profile
+              </NavLink>
+            )}
           </div>
         </div>
         <div>
