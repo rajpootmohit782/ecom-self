@@ -1,20 +1,26 @@
-.heading{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 50px;
+.heading {
+  display: flex;
+  flex-direction: column;
+  text-align: justify;
+  align-items: center;
+
+  flex-wrap: wrap-reverse;
+
+  margin-top: 30px;
 }
-.music{
-    background-color: aqua;
+.music {
 }
-.products{
-    display: grid;
-   grid-column: auto;
-   
-    column-gap: normal;
-    
+.products {
+  display: flex;
+  height: 190px;
+  width: 150px;
+  flex-direction: column;
+  width: 150px;
+
+  column-gap: normal;
 }
-.poster{
-    display: flex;
-    justify-content: space-evenly;
+.poster {
+  display: flex;
+  justify-content: space-evenly;
+  border: 1px solid brown;
 }

@@ -16,6 +16,12 @@ const Header = (props) => {
 
   const authCtx = useContext(AuthContext);
   const isLoggedIn = authCtx.isLoggedIn;
+  console.log(authCtx.isLoggedIn);
+  const Logout = () => {
+    console.log("logout");
+    authCtx.logout();
+  };
+
   const Cart = <Button varient="sucess">Cart{statelength}</Button>;
   return (
     <div>
@@ -53,6 +59,7 @@ const Header = (props) => {
               <NavLink
                 style={{ textDecoration: "None", color: "white" }}
                 to="/"
+                onClick={Logout}
               >
                 Logout
               </NavLink>

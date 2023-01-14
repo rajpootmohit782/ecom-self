@@ -3,8 +3,11 @@ import { useState, useRef, useContext } from "react";
 import classes from "./AuthForm.module.css";
 import AuthContext from "../store/auth-context";
 import Header from "../Header";
+import { useNavigate } from "react-router-dom";
 
 const AuthForm = () => {
+  const history = useNavigate();
+  console.log(history);
   const [isLogin, setIsLogin] = useState(true);
   const emailInputRef = useRef();
   const passwordInputRef = useRef();
@@ -38,9 +41,10 @@ const AuthForm = () => {
         let data = await login.json();
         console.log("login--", data);
         authCtx.login(data.idToken);
+        history("/");
       } catch (error) {
-        console.log(error.json());
-        alert(error.json());
+        console.log(error);
+        alert(error);
       }
     } else {
       url =
@@ -59,6 +63,7 @@ const AuthForm = () => {
           }
         });
         console.log("signup--", await signup.json());
+        history("/");
       } catch (error) {
         console.log(error);
         alert(error);
