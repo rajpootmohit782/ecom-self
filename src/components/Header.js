@@ -33,6 +33,12 @@ const Header = (props) => {
             >
               Aboutpage
             </NavLink>
+            <NavLink
+              style={{ textDecoration: "None", color: "white" }}
+              to="/login"
+            >
+              Login
+            </NavLink>
           </div>
         </div>
         <div>

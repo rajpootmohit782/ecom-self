@@ -7,6 +7,7 @@ import { Route, Routes, Switch } from "react-router-dom";
 import Home from "./components/Home";
 import Aboutpage from "./components/Aboutpage";
 import ProductDetail from "./components/ProductDetail";
+import AuthForm from "./components/Aurth/AuthForm";
 
 const App = () => {
   return (
@@ -18,6 +19,7 @@ const App = () => {
         <Route path="/about" element={<Aboutpage />} />
         <Route path="/products" element={<Musicpage />} />
         <Route path="/product-details/:productId" element={<ProductDetail />} />
+        <Route path="/login" element={<AuthForm />} />
       </Routes>
     </div>
   );
